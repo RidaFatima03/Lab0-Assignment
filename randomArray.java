@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class randomArray {
 
@@ -38,7 +39,7 @@ public class randomArray {
         //when i try to run the method even with a fixed length, it doesn't provide the correct output.
         //System.out.println(createRandomArray(2));
 
-        System.out.println(createRandomArray(arrayLength));
+        System.out.println(Arrays.toString(createRandomArray(arrayLength)));
 
         in.close();
     }
