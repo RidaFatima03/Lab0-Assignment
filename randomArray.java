@@ -16,7 +16,43 @@ public class randomArray {
         }
         return array;
     }
-
+    /* finding maximum and minimum values */
+    private int max;
+    private int min;
+    public int max(int[] array){
+        for (int i =0; i<array.length;i++)
+        {
+            if (i==0){
+                max=array[i];
+            }
+            if (i!=0)
+            {
+                if (array[i]>max)
+                {
+                    max=array[i];
+                }
+            }
+        }
+        return max;
+    }
+    public int min(int[] array){
+        for (int i =0; i<array.length;i++)
+        {
+            if (i==0){
+                min=array[i];
+            }
+            if (i!=0)
+            {
+                if (array[i]<min)
+                {
+                    min=array[i];
+                }
+            }
+        }
+        return min;
+    }
+    
+    
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
