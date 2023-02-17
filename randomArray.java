@@ -51,7 +51,33 @@ public class randomArray {
         }
         return min;
     }
-    
+    /* part e
+     * finding sums of both odd and even numbers
+     */
+    public int oddSum( int[] array )
+    {
+        int oddSums = 0;
+        for( int i = 0; i < array.length; i++ )
+        {
+            if( array[i] % 2 == 1 )
+            {
+                oddSums += array[i];
+            }
+        }
+        return oddSums;
+    }
+    public int evenSum( int[] array )
+    {
+        int evenSums = 0;
+        for( int i = 0; i < array.length; i++ )
+        {
+            if( array[i] % 2 == 0 )
+            {
+                evenSums += array[i];
+            }
+        }
+        return evenSums;
+    }
     
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
