@@ -125,7 +125,7 @@ public class Array {
         int [] array= createRandomArray(arrayLength);
         while (!wantsToExit){
             displayMenuOptions();
-            String choice= in.nextInt();
+            String choice= in.next();
             switch (choice) {
                 case "1":
                     System.out.println(min(array));
@@ -133,9 +133,8 @@ public class Array {
                 case "2":
                     System.out.println(max(array));
                     break;
-
                 case "3":
-                    System.out.println(Arrays.toString(findDifference(array));
+                    System.out.println(Arrays.toString(findDifference(array)));
                     break;
                 case "4":
                     System.out.println(evenSum(array));
@@ -152,12 +151,12 @@ public class Array {
             }
 
         }
-       
+        in.close();
+
          
         }
       
 
-        in.close();
     }
 
-}
+
