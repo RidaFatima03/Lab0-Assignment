@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class randomArray {
+public class Array {
 
     public static int[] createRandomArray(int n)
     {
@@ -19,37 +19,39 @@ public class randomArray {
     /* finding maximum and minimum values */
     private int max;
     private int min;
-    public int max(int[] array){
+    public static int max(int[] array){
+        int maximum=0; //initialization
         for (int i =0; i<array.length;i++)
         {
             if (i==0){
-                max=array[i];
+                maximum=array[i];
             }
             if (i!=0)
             {
-                if (array[i]>max)
+                if (array[i]>maximum)
                 {
-                    max=array[i];
+                    maximum=array[i];
                 }
             }
         }
-        return max;
+        return maximum;
     }
-    public int min(int[] array){
+    public static int min(int[] array){
+        int minimum =0; //initialization
         for (int i =0; i<array.length;i++)
         {
             if (i==0){
-                min=array[i];
+                minimum=array[i];
             }
             if (i!=0)
             {
-                if (array[i]<min)
+                if (array[i]<minimum)
                 {
-                    min=array[i];
+                    minimum=array[i];
                 }
             }
         }
-        return min;
+        return minimum;
     }
     // part d 
     
@@ -84,54 +86,76 @@ public class randomArray {
     /* part e
      * finding sums of both odd and even numbers
      */
-    public int oddSum( int[] array )
+    public static int oddSum( int[] array )
     {
         int oddSums = 0;
         for( int i = 0; i < array.length; i++ )
         {
-            if( array[i] % 2 == 1 )
+            if( i % 2 == 1 )
             {
                 oddSums += array[i];
             }
         }
         return oddSums;
     }
-    public int evenSum( int[] array )
+    public static int evenSum( int[] array )
     {
         int evenSums = 0;
         for( int i = 0; i < array.length; i++ )
         {
-            if( array[i] % 2 == 0 )
+            if( i % 2 == 0 )
             {
                 evenSums += array[i];
             }
         }
         return evenSums;
     }
+    public static void  displayMenuOptions(){
+        String menu= "Choose one of the options below\n" + "1- Find the minimum number in the array\n" +
+        "2-Find the maximum number in the array\n" + "3-Find the difference of each element and the average of the array\n" 
+        + "4-Find the sum of the elements in even indices\n" + "5-Find the sum of the elements in odd indices\n" + "6-Exit";
+        System.out.println(menu);
+    }
     
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-
         boolean wantsToExit = false;
-        int arrayLength = 0;
-
+        System.out.print("Enter the size of the array:");
+        int arrayLength= in.nextInt();
+        int [] array= createRandomArray(arrayLength);
         while (!wantsToExit){
-            System.out.print("Choose one of the following options: \n1. Enter new number into the array. \n2. Exit.\nYour choice: ");
-            int menuOption = in.nextInt();
-            if (menuOption == 1){
-                arrayLength++;
-            }
-            else if (menuOption == 2){
-                wantsToExit = true;
-            }
-            else{
-                System.out.println("You have entered an invalid number. Please try again.");
-            }
-        }
-        //when i try to run the method even with a fixed length, it doesn't provide the correct output.
-        //System.out.println(createRandomArray(2));
+            displayMenuOptions();
+            String choice= in.nextInt();
+            switch (choice) {
+                case "1":
+                    System.out.println(min(array));
+                    break;
+                case "2":
+                    System.out.println(max(array));
+                    break;
 
-        System.out.println(Arrays.toString(createRandomArray(arrayLength)));
+                case "3":
+                    System.out.println(Arrays.toString(findDifference(array));
+                    break;
+                case "4":
+                    System.out.println(evenSum(array));
+                    break;
+               case "5":
+                    System.out.println(oddSum(array));
+                    break;
+                case "6":
+                    wantsToExit=true;
+                    break;              
+                                       
+             default:
+                    break;
+            }
+
+        }
+       
+         
+        }
+      
 
         in.close();
     }
