@@ -1,0 +1,6 @@
+What are some of the obstacles that you encountered working on this assignment? 
+The phrasing of the question was a bit unclear which led to us having to revise the code a few times. We divided the parts of the question ahead of time but I think we should have also decided on method names ahead of time so that there was less confusion when writing the main method. However, this assignment was a good opportunity to learn what we can do better in the actual project.
+
+
+What would be some advantages of using GitHub for your projects? 
+Understanding the other group members’ thought processes becomes easier through the comments left on their commits. Instead of having to explain each commit externally or sharing files through external sources, through which we would need to download each version onto the computer, GitHub makes it easy to always have updated files on the local repository
